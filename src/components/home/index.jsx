@@ -1,12 +1,26 @@
 import { useState } from 'react'
-import Input from '../input'
+import QRCode from 'react-qr-code'
 import './styles.css'
 
 export default function Home() {
-  return (
+  const [link, setLink] = useState(' ')
+  
+  function handleLink(e){
+    setLink(e.target.value);
+  }
+
+  return(
     <main>
-      <h1>Hello, World!</h1>
-      <Input type='text' placeholder='Digite um link' />
+      <section>
+        <QRCode value={link}/>
+        <input
+          className='inputLink'
+          placeholder='Digite um link'
+          value={link}
+          onChange={(e) => handleLink(e)}
+        />
+      </section>
     </main>
   )
-};
+
+}
