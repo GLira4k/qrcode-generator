@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import QRCode from 'react-qr-code';
 import QRCodeLink from 'qrcode';
+import GerenateButton from '../generateButton';
+import DownloadButton from '../downloadButton';
 import './styles.css';
 
 export default function Home() {
@@ -26,6 +28,15 @@ export default function Home() {
     handleGenerate(linkInput);
   }
 
+  function handleDownloadClick() {
+    const link = document.createElement('a');
+    link.href = qrcodeLink;
+    link.download = 'QRCode.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <main>
       <section>
@@ -36,8 +47,8 @@ export default function Home() {
           value={linkInput}
           onChange={(e) => handleLinkInput(e)}
         />
-        <button onClick={handleButtonClick}>Gerar QRCode</button>
-        <button><a href={qrcodeLink} download={`QrCode`}>Baixar QRCode</a></button>
+        <GerenateButton onClick={handleButtonClick} btnText='Gerar QRCode'/>
+        <DownloadButton onClick={handleDownloadClick} btnText='Baixar QRCode'/>
       </section>
     </main>
   );
