@@ -1,0 +1,23 @@
+.downloadButton{
+    width: 120px;
+    height: 45px;
+
+    border: solid 1px #0A59C2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.363);
+    background-color: white;
+    color: #0A59C2;
+    
+    font-weight: 500;
+}
+
+.downloadButton:hover{
+    box-shadow: 2px 2px 3px #1862c265;
+    background-color: #0A59C2;
+    color: white;
+    transition: all ease-in-out;
+}
+
+.downloadButton:active{
+    transform: scale(0.99);
+}

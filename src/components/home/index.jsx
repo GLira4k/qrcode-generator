@@ -1,22 +1,28 @@
-import { useState } from 'react';
-import QRCode from 'react-qr-code';
-import QRCodeLink from 'qrcode';
-import GerenateButton from '../generateButton';
-import DownloadButton from '../downloadButton';
-import './styles.css';
+import { useState } from "react";
+import QRCode from "react-qr-code";
+import QRCodeLink from "qrcode";
+import GenerateButton from "../generateButton";
+import DownloadButton from "../downloadButton";
+import Input from "../input";
+import "./styles.css";
 
 export default function Home() {
-  const [linkInput, setLinkInput] = useState(' ');
-  const [link, setLink] = useState('');
-  const [qrcodeLink, setQrcodeLink] = useState('');
+  const [linkInput, setLinkInput] = useState(" ");
+  const [link, setLink] = useState("");
+  const [qrcodeLink, setQrcodeLink] = useState("");
 
   function handleGenerate(link_url) {
-    QRCodeLink.toDataURL(link_url, {
-      width: 600,
-      margin: 3,
-    }, function(err, url) {
-      setQrcodeLink(url);
-    });
+    QRCodeLink.toDataURL(
+      link_url,
+      {
+        width: 600,
+        margin: 3,
+      },
+      function (err, url) {
+        setQrcodeLink(url);
+        
+      }
+    );
   }
 
   function handleLinkInput(e) {
@@ -29,9 +35,9 @@ export default function Home() {
   }
 
   function handleDownloadClick() {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = qrcodeLink;
-    link.download = 'QRCode.png';
+    link.download = "QRCode.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -40,15 +46,23 @@ export default function Home() {
   return (
     <main>
       <section>
+        <h1>QRCode Generator</h1>
         <QRCode value={link} />
-        <input
-          className='inputLink'
-          placeholder='Digite um link'
+        <Input
+          placeholder="Digite um link"
           value={linkInput}
           onChange={(e) => handleLinkInput(e)}
         />
-        <GerenateButton onClick={handleButtonClick} btnText='Gerar QRCode'/>
-        <DownloadButton onClick={handleDownloadClick} btnText='Baixar QRCode'/>
+        <div className="buttonsContainer">
+          <GenerateButton 
+          onClick={handleButtonClick} 
+          btnText="Gerar QRCode" 
+          />
+          <DownloadButton
+            onClick={handleDownloadClick}
+            btnText="Baixar QRCode"
+          />
+        </div>
       </section>
     </main>
   );

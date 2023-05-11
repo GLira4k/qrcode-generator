@@ -1,0 +1,22 @@
+.generateButton{
+    width: 120px;
+    height: 45px;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.363);
+    background-color: #0A59C2;
+    color: white;
+    
+    font-weight: 500;
+}
+
+.generateButton:hover{
+    box-shadow: 2px 2px 3px #1862c265;
+    background-color: #1862c2;
+    transition: all ease-in-out;
+}
+
+.generateButton:active{
+    transform: scale(0.99);
+}

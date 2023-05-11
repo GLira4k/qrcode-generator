@@ -1,9 +1,10 @@
 import React from "react";
+import './styles.css'
 
-export default function GerenateButton({ onClick, btnText }){
+export default function GenerateButton({ onClick, btnText }){
     return(
         <div>
-            <button onClick={onClick}>{btnText}</button>
+            <button onClick={onClick} className="generateButton">{btnText}</button>
         </div>
     )
 }
