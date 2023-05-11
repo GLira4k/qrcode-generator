@@ -30,11 +30,21 @@ export default function Home() {
   }
 
   function handleButtonClick() {
+    if (linkInput.trim() === '') {
+      alert('Por favor, insira um link antes de gerar o QR Code.');
+      return;
+    }
     setLink(linkInput);
     handleGenerate(linkInput);
+    
   }
 
   function handleDownloadClick() {
+    if (qrcodeLink.trim() === '') {
+      alert('Por favor, gere um QR Code antes de baixar.');
+      return;
+    }
+
     const link = document.createElement("a");
     link.href = qrcodeLink;
     link.download = "QRCode.png";
