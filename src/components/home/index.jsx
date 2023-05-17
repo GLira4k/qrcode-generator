@@ -4,6 +4,7 @@ import QRCodeLink from "qrcode";
 import GenerateButton from "../generateButton";
 import DownloadButton from "../downloadButton";
 import Input from "../input";
+import Footer from "../footer";
 import "./styles.css";
 
 export default function Home() {
@@ -74,6 +75,7 @@ export default function Home() {
           />
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
