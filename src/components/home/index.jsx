@@ -95,8 +95,8 @@ export default function Home() {
             includeMargin={true}
             imageSettings={{
               src: logoIcon || "",
-              width:38,
-              height:38,
+              width:40,
+              height:40,
               excavate: true,
               style: {
                 "border-radius": "5px",
