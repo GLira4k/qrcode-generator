@@ -91,7 +91,7 @@ export default function Home() {
         <div id="qrcode-section">
           <QRCode
             value={qrcodeLink}
-            size={250}
+            size={300}
             includeMargin={true}
             imageSettings={{
               src: logoIcon || "",
