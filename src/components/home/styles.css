@@ -5,10 +5,10 @@ section{
   justify-content: center;
   flex-direction: column;
   
-  height: 550px;
-  max-width: 450px;
+  height: 570px;
+  max-width: 470px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 40px;
 
   border-radius: 20px;
