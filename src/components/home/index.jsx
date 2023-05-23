@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import QRCode from "qrcode.react";
+//import QRCode from "qrcode.react";
+import { QRCode } from 'react-qrcode-logo';
 import html2canvas from "html2canvas";
 import GenerateButton from "../generateButton";
 import DownloadButton from "../downloadButton";
@@ -92,16 +93,11 @@ export default function Home() {
           <QRCode
             value={qrcodeLink}
             size={250}
-            includeMargin={true}
-            imageSettings={{
-              src: logoIcon || "",
-              width:37,
-              height:37,
-              excavate: true,
-              style: {
-                borderRadius: "5px",
-              },
-            }}
+            quietZone={20}
+            logoImage={logoIcon || ""}
+            logoWidth={70}
+            logoHeight={70}
+            removeQrCodeBehindLogo={true}
           />
         </div>
         <Input

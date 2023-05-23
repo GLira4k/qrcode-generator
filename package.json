@@ -17,7 +17,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-image-file-resizer": "^0.4.8",
-    "react-qr-code": "^2.0.11"
+    "react-qr-code": "^2.0.11",
+    "react-qrcode-logo": "^2.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
