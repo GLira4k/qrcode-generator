@@ -98,6 +98,7 @@ export default function Home() {
             logoWidth={70}
             logoHeight={70}
             removeQrCodeBehindLogo={true}
+            
           />
         </div>
         <Input
